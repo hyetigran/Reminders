@@ -10,6 +10,7 @@
 
 import React from 'react';
 import { NativeBaseProvider } from 'native-base';
+import { NavigationContainer } from '@react-navigation/native';
 import {
   SafeAreaView,
   ScrollView,
@@ -24,16 +25,18 @@ const App = () => {
   console.log('HERE');
   return (
     <NativeBaseProvider theme={nativeTheme}>
-      <SafeAreaView>
-        <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-          // backgroundColor={backgroundStyle.backgroundColor}
-        />
-        <ScrollView
-          contentInsetAdjustmentBehavior='automatic'
-          // style={backgroundStyle}
-        ></ScrollView>
-      </SafeAreaView>
+      <NavigationContainer>
+        <SafeAreaView>
+          <StatusBar
+            barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+            // backgroundColor={backgroundStyle.backgroundColor}
+          />
+          <ScrollView
+            contentInsetAdjustmentBehavior='automatic'
+            // style={backgroundStyle}
+          ></ScrollView>
+        </SafeAreaView>
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 };
